@@ -1,0 +1,24 @@
+<div class="pagination">
+    
+    {% if series.has_previous %}
+        <a href="?page=1">&laquo;First<a/>
+        <a href="?page={{series.previous_page_number}}">Previous<a/>
+
+
+    {%endif%}
+
+    <span class="actual">
+        Page {{series.number}} of {{series.paginator.num_pages}}
+
+    </span>
+
+    {% if series.has_next %}
+        <a href="?page={{series.next_page_number}}">Next<a/>
+        <a href="?page={{series.paginator.num_pages}}">Last &raquo;<a/>
+        
+
+
+    {%endif%}
+
+
+</div>

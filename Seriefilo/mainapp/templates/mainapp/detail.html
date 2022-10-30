@@ -1,0 +1,27 @@
+{%extends 'layouts/layoutgeneral.html' %}
+
+
+
+{%block title%}
+    {{serie.title}}
+{%endblock%}
+
+
+{%block content%}
+
+    
+    {%if serie.image != 'null' and serie.image.url|length >= 1 %}
+        <div class="image">
+            <img src="{{serie.image.url}}"/>
+        </div>
+    {%endif%}
+    <h1 class="title">{{serie.title}}</h1>
+    <span class="date">{{serie.year_release}}</span>
+    
+
+
+    <p class="content">{{serie.description|safe}}</p>
+
+    
+
+{%endblock%}

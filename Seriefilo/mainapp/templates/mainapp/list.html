@@ -1,0 +1,17 @@
+{%extends 'layouts/layoutgeneral.html' %}
+
+
+
+{%block title%}
+    {{title}}
+{%endblock%}
+
+
+{%block content%}
+    <h1 class="title">{{title}}</h1>
+
+    {%include 'mainapp/reuse.html' %}
+    {%include 'mainapp/pagination.html' %}
+
+
+{%endblock%}

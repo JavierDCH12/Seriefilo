@@ -1,0 +1,37 @@
+{%for serie in series%}
+            <article class="serie-item">
+                    {%if serie.image != 'null' and serie.image.url|length >= 1 %}
+                        <div class="image">
+                            <img src="{{serie.image.url}}"/>
+                        </div>
+                    {%endif%}
+
+                <div class="data">
+                    <h2>
+                        <a href="{% url 'serie' serie.title %}">  {{serie.title}} </a>
+                    </h2>
+                    <p>
+                        {%for category in serie.categories.all%}
+                            <a href="{% url 'category' category.genre %}">{{category.genre}}<a/>
+                                {%if forloop.counter < serie.categories.all|length%}
+                                {{'---'}}
+                                {%endif%}
+                        {%endfor%}
+                    </p>
+                    <span class="date">
+
+                        {{serie.user.first_name}}
+                        {{serie.user.last_name}}
+                        |
+
+
+                        {{serie.category.}}
+                        {{serie.year_release}}
+                    
+                    </span>
+                    <p class="content">{{serie.description|safe}}</p>
+                    <hr>
+                </div>
+            </article>
+
+{%endfor%}

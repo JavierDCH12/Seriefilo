@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+    <metacharet="utf-8"/>
+    <title> {%block title%} {%endblock%} | JavierDCH12</title>
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}" />
+</head>
+
+
+<body>
+    <header>
+        <div id="titulo">
+            <h1>Seriefilo</h1>
+        </div>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{%url 'index'%}">Start</a>
+            </li>
+            {%if user.email%}
+                <li>
+                    <a href="{%url 'list'%}">List of series</a>
+                </li>
+                <li>
+                    <a href="{%url 'list'%}">Categories</a>
+                
+                    <ul>
+                        {%for category in categories%}
+
+                        
+                            <li>
+                                <a href="{%url 'category' category.0 %}">{{category.0}}</a>
+                            </li>
+                        {%endfor%}
+
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="{%url 'list'%}">Platforms</a>
+                
+                    <ul>
+                        {%for platform in platforms%}
+
+                        
+                            <li>
+                                <a href="{%url 'platform' platform.0%}">{{platform.0}}</a>
+                            </li>
+                        {%endfor%}
+
+                        
+                    </ul>
+                </li>
+            
+
+                {%for page in pages%}
+                    <li>
+                        <a href="{%url 'page' page.1 %}">{{page.0}}</a>
+                    </li>
+                {%endfor%}
+
+                <li>
+                    <a href="{%url 'logout'%}">Logout</a>
+                </li>
+            
+            {%else%}
+
+                
+
+                <li>
+                    <a href="{%url 'register'%}">Register</a>
+                </li>
+                <li>
+                    <a href="{%url 'login'%}">Login</a>
+                </li>
+            {%endif%}
+            
+           
+
+        </ul>
+    </nav>
+
+    <div id="content">
+        {%block content %}
+
+        
+        {%endblock%}
+
+
+
+
+
+    </div>
+    <hr>
+
+    <footer>Seriefilo &copy; Javier Delgado Chacón</footer>
+
+
+
+
+
+
+
+
+
+
+</body>

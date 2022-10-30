@@ -1,0 +1,27 @@
+{%extends 'layouts/layoutgeneral.html' %}
+
+
+
+{%block title%}
+    {{title}}
+    <br>
+{%endblock%}
+
+
+{%block content%}
+    <h1>Index</h1>
+
+    {%if messages%}
+        {%for message in messages%}
+            <div class="salert-success">{{message}}</div>
+        {%endfor%}
+
+
+    {%endif%}
+    <h1>Welcome, {{request.user.first_name}} {{request.user.last_name}}</h1>
+
+    
+
+{%endblock%}
+
+

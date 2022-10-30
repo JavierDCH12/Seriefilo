@@ -1,0 +1,12 @@
+{%extends 'layouts/layoutgeneral.html' %}
+
+{%block title%} {{category.genre}} {%endblock%}
+
+{%block content%}
+    <h1 class="title">{{category.genre}}</h1>
+    <p>{{category.description|safe}}</p>
+
+    {%include 'mainapp/reuse.html' with series=category.serie_set.all %}
+    
+    
+{%endblock%}

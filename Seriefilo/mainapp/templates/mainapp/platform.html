@@ -1,0 +1,13 @@
+{%extends 'layouts/layoutgeneral.html' %}
+
+{%block title%} {{platform.wheretosee}} {%endblock%}
+
+{%block content%}
+    <h1 class="title">{{platform.wheretosee}}</h1>
+
+    {%include 'mainapp/reuse.html' with series=platform.serie_set.all %}
+    
+
+
+
+{%endblock%}
